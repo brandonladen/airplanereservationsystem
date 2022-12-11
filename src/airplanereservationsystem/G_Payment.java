@@ -66,7 +66,7 @@ public class G_Payment extends JFrame implements ActionListener {
          label2.setFont(new Font("Elephant",Font.PLAIN,20));
          panel.add(label2);
          
-         text = new JTextField("");
+         text = new JTextField();
          text.setBounds(25,150,300,25);
          panel.add(text);
          

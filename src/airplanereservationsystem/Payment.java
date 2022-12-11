@@ -24,7 +24,7 @@ import javax.swing.JTextField;
 public class Payment extends JFrame implements ActionListener {
      private JPanel panel;
      private JLabel label , label1 , label2 , label3 ,label4 , label5 , label6 , label7;
-     private JTextField text , text1 , text2;
+     JTextField text , text1 , text2;
      private JComboBox box , box1;
      private ImageIcon image;
      private JButton button , button1;
@@ -32,10 +32,10 @@ public class Payment extends JFrame implements ActionListener {
    
     
     public Payment(){
-        Payment obj = new Payment();
+        //Payment obj = new Payment();
         
         setSize(650,450);
-        setLocation(400,100);
+        setLocation(800,180);
         setUndecorated(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
@@ -125,7 +125,7 @@ public class Payment extends JFrame implements ActionListener {
      
      button1 = new JButton("Pay");
      button1.setBounds(500,390,100,25);
-    // button1.addActionListener(this);
+    button1.addActionListener(this);
      panel.add(button1);
         
         
@@ -137,8 +137,9 @@ public class Payment extends JFrame implements ActionListener {
         if(e.getSource()==button){
             dispose();
         }
-        if(e.getSource()==button){
-          //  text2.getText5();
+        if(e.getSource()==button1){
+          new Report();
+          dispose();
         }
         
     }

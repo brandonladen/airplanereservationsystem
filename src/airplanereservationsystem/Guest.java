@@ -25,11 +25,12 @@ public class Guest extends JFrame implements ActionListener{
       private JLabel label , label1 , label2 , label3 , label4 , label5;
       private JTextField text1, text2,text3,text4;
       private JPasswordField text5;
-      private JButton button , button3;
+      private JButton button , button1;
       
     public Guest(){
-        
+       
         setSize(750,700);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setUndecorated(true);
         
         
@@ -49,22 +50,22 @@ public class Guest extends JFrame implements ActionListener{
         panel.add(label1);
         
         
-        label2 = new JLabel("Surname");
+        label2 = new JLabel("Email Address");
         label2.setBounds(50,200,1000,30);
         label2.setFont(new Font("Elephant",Font.BOLD,20));
         panel.add(label2);
         
-        label3 = new JLabel("Other Names");
+        label3 = new JLabel("First Name");
         label3.setBounds(50,300,1000,20);
         label3.setFont(new Font("Elephant",Font.BOLD,20));
         panel.add(label3);
         
-        label4 = new JLabel("Email");
+        label4 = new JLabel("Second Name");
         label4.setBounds(50,400,1000,30);
         label4.setFont(new Font("Elephant",Font.BOLD,20));
         panel.add(label4);
         
-        label5 = new JLabel("Password");
+        label5 = new JLabel("Surn Name");
         label5.setBounds(50,500,1000,30);
         label5.setFont(new Font("Elephant", Font.BOLD,20));
         panel.add(label5);
@@ -96,14 +97,14 @@ public class Guest extends JFrame implements ActionListener{
         
         
         button = new JButton("Book Flight");
-        button.setBounds(300,600,100,30);
+        button.setBounds(300,600,150,30);
         button.addActionListener(this);
         panel.add(button);
         
-         button3 = new JButton("Close");
-        button3.setBounds(675,0,75,25);
-        button3.addActionListener(this);
-        panel.add(button3);
+        button1 = new JButton("Close");
+        button1.setBounds(675,0,75,30);
+        button1.addActionListener(this);
+        panel.add(button1);
         
         setVisible(true);
         
@@ -112,14 +113,15 @@ public class Guest extends JFrame implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()==button){
+           new G_airlines();
             dispose();
-            G_airlines G = new G_airlines();
-        }
-        if(e.getSource()==button3){
+            }
+        if(e.getSource()==button1){
             dispose();
         }
     }
 }
+
 
     
     

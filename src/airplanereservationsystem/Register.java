@@ -29,6 +29,7 @@ public class Register extends JFrame  implements ActionListener{
     public Register(){
        
         setSize(750,700);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setUndecorated(true);
         
         
@@ -48,22 +49,22 @@ public class Register extends JFrame  implements ActionListener{
         panel.add(label1);
         
         
-        label2 = new JLabel("Surname");
+        label2 = new JLabel("Email Address");
         label2.setBounds(50,200,1000,30);
         label2.setFont(new Font("Elephant",Font.BOLD,20));
         panel.add(label2);
         
-        label3 = new JLabel("Other Names");
+        label3 = new JLabel("First Name");
         label3.setBounds(50,300,1000,20);
         label3.setFont(new Font("Elephant",Font.BOLD,20));
         panel.add(label3);
         
-        label4 = new JLabel("Email");
+        label4 = new JLabel("Second Name");
         label4.setBounds(50,400,1000,30);
         label4.setFont(new Font("Elephant",Font.BOLD,20));
         panel.add(label4);
         
-        label5 = new JLabel("Password");
+        label5 = new JLabel("Surn Name");
         label5.setBounds(50,500,1000,30);
         label5.setFont(new Font("Elephant", Font.BOLD,20));
         panel.add(label5);
@@ -94,8 +95,8 @@ public class Register extends JFrame  implements ActionListener{
         panel.add(text5);
         
         
-        button = new JButton("Sign up");
-        button.setBounds(300,600,100,30);
+        button = new JButton("Create Account");
+        button.setBounds(300,600,150,30);
         button.addActionListener(this);
         panel.add(button);
         
@@ -112,7 +113,8 @@ public class Register extends JFrame  implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()==button){
             dispose();
-            airlines A = new airlines();
+            new Create_Account();
+            //airlines A = new airlines();
         }
         if(e.getSource()==button1){
             dispose();

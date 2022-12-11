@@ -26,6 +26,8 @@ public class ticketdetails extends JFrame implements ActionListener{
      private JComboBox box1 , box2 , box3 , box4 ,box5,box6,box7 , box;
      public JButton button , button1;
      
+     
+     
     /* public JTextField getText5(){
          return text5;
      }
@@ -43,9 +45,11 @@ public class ticketdetails extends JFrame implements ActionListener{
      }*/
     
      
-     
+      Payment obj = new Payment();
      
     public ticketdetails(){
+       
+        
         setTitle("");
         setSize(850,500);
         setLayout(new BorderLayout());
@@ -193,7 +197,11 @@ public class ticketdetails extends JFrame implements ActionListener{
         
         if(e.getSource()==button){
              dispose();
-            Payment P = new Payment();
+             String cont = this.text5.getText();
+             
+             obj.text2.setText(cont);
+             
+            
         }
         
         

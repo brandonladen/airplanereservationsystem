@@ -12,6 +12,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 /**
  *
@@ -125,6 +126,7 @@ public class Report extends JFrame implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e){
         if(e.getSource()==button){
+            JOptionPane.showMessageDialog(null,"You will recieve this receipt via your email address");
               dispose();
               
         }

@@ -14,6 +14,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
@@ -45,7 +46,7 @@ public class Airplanereservationsystem  extends JFrame implements ActionListener
      setTitle("Home Window");
      setSize(1150, 600);
      setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-     setLocation(100,100);
+     setLocation(400,100);
      setUndecorated(true);
      
       
@@ -160,27 +161,33 @@ public class Airplanereservationsystem  extends JFrame implements ActionListener
     
    public static void main(String[] args) {
       //  System.out.format("\nCurrent Date time: %tcn\n", System.currentTimeMillis());
-      //new Airplanereservationsystem(); 
-      new Payment();
+     // new Airplanereservationsystem();
+      new G_airlines();
+      // new G_Payment();
+       //new Payment();
     
  }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()== button1){
-            WelcomeAsGuest W = new WelcomeAsGuest();
+         //   WelcomeAsGuest W = new WelcomeAsGuest();
+             JOptionPane.showMessageDialog(null, "We recommend you to register if you dont have any account and get upto 35% discount.\n "
+            + " Please click OK to continue as Guest 😊");
+              new Guest();
             } 
+        
        else if(e.getSource()==button3){
-                 Register R = new Register();
+             Register R = new Register();
              }
        else if(e.getSource()==button2){
            Login L = new Login();
             }
        else if(e.getSource()==button4){
-           aboutUs A = new aboutUs();
+           JOptionPane.showMessageDialog(null, "This is basically Brandon's 2022 java project");
        }
        else if(e.getSource()==button5){
-           help H = new help();
+           JOptionPane.showMessageDialog(null,"Contact me through 0702499923");
        }
         else if(e.getSource()==button6){
            dispose();

@@ -13,6 +13,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
@@ -34,7 +35,8 @@ public class Login extends JFrame implements ActionListener{
        
         setSize(600,500);
         setUndecorated(true);
-        setLocation(400,100);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLocation(700,80);
         
         panel = new JPanel();
         panel.setLayout(null);
@@ -115,8 +117,9 @@ public class Login extends JFrame implements ActionListener{
            Register R = new Register();
        }
        if(e.getSource()==button){
+          // airlines A = new airlines();
+           JOptionPane.showMessageDialog(null,"This button is still under modifications \n Try welcome as guest");
            this.dispose();
-           airlines A = new airlines();
            
        }
        if(e.getSource()==button3){

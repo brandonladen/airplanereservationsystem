@@ -130,7 +130,7 @@ public class G_ticketdetails extends JFrame implements ActionListener {
         String [] month = {"Month","January","February","March",
             "April","May","June","July","August","September","October",
             "November","December"};
-        String [] year = {"Year","2022"};
+        String [] year = {"Year","2022","2023"};
         
         box5 = new JComboBox(day);
         box5.setBounds(300,350,200,30);
@@ -157,7 +157,7 @@ public class G_ticketdetails extends JFrame implements ActionListener {
         label7 = new JLabel("Give in your correct details");
         label7.setBounds(300, 0, 1000, 30);
         label7.setFont(new Font("Elephant",Font.BOLD,30));
-        label7.setForeground(Color.red);
+        label7.setForeground(Color.black);
         add(label7);
 
         
@@ -169,8 +169,8 @@ public class G_ticketdetails extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()==button){
             dispose();
-            Payment P = new Payment();
-        }
+            Payment P = new Payment();  // im here
+        } 
         
      if(e.getSource()==button1){
             dispose();
@@ -201,7 +201,7 @@ public class G_ticketdetails extends JFrame implements ActionListener {
            text5.setText("KSH " + java.lang.Math.round(24000*1.35));
          }
         if( airport1.equals("Tambo International Airport")&& airport2.equals("Hang Nadim International Airport")){
-           text5.setText("KSH " + java.lang.Math.round(34000*1.35));
+           text5.setText("KSH " + java.lang.Math.round(24000*1.35));
          }
         if( airport1.equals("Tambo International Airport")&& airport2.equals("Tengah Air Base")){
            text5.setText("KSH " + java.lang.Math.round(43000*1.35));
