@@ -131,8 +131,7 @@ public class Login extends JFrame implements ActionListener{
                Class.forName("com.mysql.jdbc.Driver");
                Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/airplanesystem","root" ,"wambogas11999");
                Statement st = con.createStatement();
-               String querry = "select * from logindetails where UserName= '"+user+"' and Password= '"+pas+"'";
-               
+               String querry = "select * from logindetails where UserName= '"+user+"' and Password= '"+pas+"'";               
                ResultSet rs = st.executeQuery(querry);
               
                if(rs.next() == true){
@@ -149,13 +148,7 @@ public class Login extends JFrame implements ActionListener{
            } catch (SQLException ex) {
                Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
            }
-           
-           
-           
-           
-          // airlines A = new airlines();
-          // JOptionPane.showMessageDialog(null,"This button is still under modifications \n Try welcome as guest");
-          
+                   
            
        }
        if(e.getSource()==button3){
