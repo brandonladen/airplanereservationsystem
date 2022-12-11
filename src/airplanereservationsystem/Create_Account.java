@@ -9,9 +9,16 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
@@ -54,7 +61,7 @@ public class Create_Account extends JFrame implements ActionListener{
         label2.setFont(new Font("Elephant",Font.ITALIC,20));
         panel.add(label2);
         
-        userText = new JTextField("");
+        userText = new JTextField();
         userText.setBounds(250,100, 300, 30);
         panel.add(userText);
         
@@ -88,7 +95,30 @@ public class Create_Account extends JFrame implements ActionListener{
         if(e.getSource() == button3){
             dispose();
         }else if(e.getSource() == button){
-            new Login();
+            try {
+                
+                //This will save the inserted credentials to the database
+                Class.forName("com.mysql.jdbc.Driver");
+                Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/AirplaneSystem" , "root" , "wambogas11999");
+                String querry = "insert into logindetails(UserName , Password) values(? , ?)";
+                PreparedStatement pst = con.prepareStatement(querry);
+                pst.setString(1,userText.getText());
+                pst.setString(2,pass.getText());
+                pst.executeUpdate();
+                JOptionPane.showMessageDialog(null,"Your credentials are saved successfully");
+                new Login();
+                con.close();
+                
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(Create_Account.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (SQLException ex) {
+                Logger.getLogger(Create_Account.class.getName()).log(Level.SEVERE, null, ex);
+                JOptionPane.showMessageDialog(null,"Try using a different passwrod");
+               
+            }  
+            
+            
+            
             dispose();
         }
     }

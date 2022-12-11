@@ -45,7 +45,7 @@ public class ticketdetails extends JFrame implements ActionListener{
      }*/
     
      
-      Payment obj = new Payment();
+     // Payment obj = new Payment();
      
     public ticketdetails(){
        
@@ -199,7 +199,7 @@ public class ticketdetails extends JFrame implements ActionListener{
              dispose();
              String cont = this.text5.getText();
              
-             obj.text2.setText(cont);
+           //  obj.text2.setText(cont);
              
             
         }

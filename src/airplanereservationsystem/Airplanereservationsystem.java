@@ -161,10 +161,10 @@ public class Airplanereservationsystem  extends JFrame implements ActionListener
     
    public static void main(String[] args) {
       //  System.out.format("\nCurrent Date time: %tcn\n", System.currentTimeMillis());
-     // new Airplanereservationsystem();
-      new G_airlines();
-      // new G_Payment();
-       //new Payment();
+     new Airplanereservationsystem();
+     // new G_airlines();
+      // new Login();
+       //new Create_Account();
     
  }
 
